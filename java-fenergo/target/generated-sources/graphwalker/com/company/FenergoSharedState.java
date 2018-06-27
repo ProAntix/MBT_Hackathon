@@ -9,47 +9,14 @@ import org.graphwalker.java.annotation.Edge;
 public interface FenergoSharedState {
 
     @Vertex()
-    void v_COICase_CaptureRequestDetails();
-
-    @Vertex()
     void v_LandingPage();
 
     @Edge()
     void e_NewRequest();
 
-    @Edge()
-    void e_ClickFenergoLogoGPI();
-
     @Vertex()
     void v_EnterEntityDetailsPage();
 
-    @Vertex()
-    void v_SearchDuplicates();
-
-    @Edge()
-    void e_ClickLENameGPI();
-
-    @Edge()
-    void e_CompleteRequest();
-
-    @Vertex()
-    void v_NonClientLE360();
-
-    @Edge()
-    void e_FillNewRequestIndividual();
-
-    @Vertex()
-    void v_CompleteRequest();
-
-    @Edge()
-    void e_ContinueNewRequest();
-
     @Edge()
     void e_StartClient();
-
-    @Edge()
-    void e_FillNewRequestCompany();
-
-    @Vertex()
-    void v_ClientLE360();
 }

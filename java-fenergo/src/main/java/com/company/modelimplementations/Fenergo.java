@@ -18,7 +18,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
  * Stop condition is 100% coverage of all edges.
  * The start element in the model is e_StartBrowser.
  */
-@GraphWalker(value = "random(edge_coverage(10))", start = "e_StartClient")
+@GraphWalker(value = "random(edge_coverage(1000))", start = "e_StartClient")
 public class Fenergo extends ExecutionContext implements FenergoSharedState {
 
     @Override
@@ -31,73 +31,27 @@ public class Fenergo extends ExecutionContext implements FenergoSharedState {
         Helper.getWaiter().until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='font-header2' and text()='My Tasks']")));
     }
 
-
-    @Override
-    public void v_COICase_CaptureRequestDetails() {
-        Helper.getWaiter().until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[1]/div/div[2]/div/div/div/div/div/div/div/div/div/div/div[1]/header/div[1]/div/a")));
-    }
-
-    @Override
-    public void v_NonClientLE360() {
-        Helper.getWaiter().until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[1]/div/div[2]/div/div/div/div/div/div/div/div/div/div/div[1]/header/div[1]/div/a")));
-    }
-
-    @Override
-    public void v_ClientLE360() {
-        Helper.getWaiter().until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[1]/div/div[2]/div/div/div/div/div/div/div/div/div/div/div[1]/header/div[1]/div/a")));
-    }
-
-    public void v_CompleteRequest() {
-        Helper.getWaiter().until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[1]/div/div[2]/div/div/div/div/div/div/div/div/div/div/div[1]/header/div[1]/div/a")));
-    }
-
-    @Override
-    public void v_SearchDuplicates() {
-        Helper.getWaiter().until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[1]/div/div[2]/div/div/div/div/div/div/div/div/div/div/div[1]/header/div[1]/div/a")));
-    }
-
-    @Override
-    public void v_EnterEntityDetailsPage() {
-        Helper.getWaiter().until(ExpectedConditions.textToBe(By.tagName("h1"), "Enter Entity Details"));
-        //WebElement table = Helper.getWaiter().until(ExpectedConditions.visibilityOfElementLocated(By.id("owners")));
-        //org.junit.Assert.assertTrue(table.findElements(By.xpath("id('owners')/tbody/tr")).size() >= 10);
-    }
-
-    @Override
-    public void e_FillNewRequestIndividual() {
-        Helper.getWaiter().until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[1]/div/div[2]/div/div/div/div/div/div/div/div/div/div/div[1]/header/div[1]/div/a")));
-    }
-
-    @Override
-    public void e_FillNewRequestCompany() {
-        Helper.getWaiter().until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[1]/div/div[2]/div/div/div/div/div/div/div/div/div/div/div[1]/header/div[1]/div/a")));
-    }
-
-    @Override
-    public void e_ClickFenergoLogoGPI() {
-        Helper.getWaiter().until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[1]/div/div[2]/div/div/div/div/div/div/div/div/div/div/div[1]/header/div[1]/div/a")));
-    }
-
-    @Override
-    public void e_CompleteRequest() {
-        Helper.getWaiter().until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[1]/div/div[2]/div/div/div/div/div/div/div/div/div/div/div[1]/header/div[1]/div/a")));
-    }
-
-    @Override
-    public void e_ContinueNewRequest() {
-        Helper.getWaiter().until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[1]/div/div[2]/div/div/div/div/div/div/div/div/div/div/div[1]/header/div[1]/div/a")));
-    }
-
     @Override
     public void e_NewRequest() {
         Helper.getWaiter().until(ExpectedConditions.elementToBeClickable(By.xpath("//i[@class='icon fen-icon-plus color']/ancestor::button"))).click();
         Helper.getWaiter().until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@title='New Request']"))).click();
     }
 
+
     @Override
-    public void e_ClickLENameGPI() {
-        Helper.getWaiter().until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[1]/div/div[2]/div/div/div/div/div/div/div/div/div/div/div[1]/header/div[1]/div/a")));
+    public void v_EnterEntityDetailsPage() {
+        Helper.getWaiter().until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='fen-panel-header enterentitydetails']/h1[text()='Enter Entity Details']")));
+        try
+        {
+            Thread.sleep(2000);
+        }
+        catch(InterruptedException e)
+        {
+            // this part is executed when an exception (in this example InterruptedException) occurs
+        }
     }
+
+
 
     @BeforeExecution
     public void setup() {
