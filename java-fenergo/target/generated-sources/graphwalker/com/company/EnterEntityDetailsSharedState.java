@@ -29,6 +29,12 @@ public interface EnterEntityDetailsSharedState {
     @Edge()
     void e_ContinueNewRequest();
 
+    @Vertex()
+    void v_LandingPage();
+
     @Edge()
-    void e_DuplicateFound();
+    void e_LandingPage();
+
+    @Edge()
+    void e_ClearData();
 }
