@@ -1,0 +1,15 @@
+com\company\FindOwnersSharedState.class
+com\company\runners\WebSocketApplication.class
+com\company\modelimplementations\Veterinariens.class
+com\company\VeterinariensSharedState.class
+com\company\PetClinicSharedState.class
+com\company\helper\Helper$WebDriverHolder.class
+com\company\observers\GraphStreamObserver.class
+com\company\modelimplementations\NewOwner.class
+com\company\modelimplementations\PetClinic.class
+com\company\helper\Helper.class
+com\company\modelimplementations\OwnerInformation.class
+com\company\modelimplementations\FindOwners.class
+com\company\runners\GraphStreamApplication.class
+com\company\NewOwnerSharedState.class
+com\company\OwnerInformationSharedState.class
