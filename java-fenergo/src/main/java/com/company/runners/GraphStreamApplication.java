@@ -1,6 +1,6 @@
 package com.company.runners;
 
-import com.company.modelimplementations.*;
+import com.company.modelimplementations.Fenergo;
 import com.company.observers.GraphStreamObserver;
 import org.graphstream.graph.Graph;
 import org.graphstream.graph.implementations.SingleGraph;
@@ -10,8 +10,6 @@ import org.graphwalker.java.test.Result;
 import org.graphwalker.java.test.TestExecutor;
 
 import java.io.IOException;
-import java.util.Iterator;
-import java.util.Map;
 
 /**
  * @author Nils Olsson

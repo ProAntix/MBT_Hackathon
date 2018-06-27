@@ -16,10 +16,6 @@ import org.graphwalker.core.model.Vertex.RuntimeVertex;
  */
 public class GraphStreamObserver implements Observer {
 
-    private final Graph graph;
-    private Element lastElement = null;
-    private Context lastContext = null;
-
     private static String stylesheet = "" +
             "node {" +
             " shape: rounded-box;" +
@@ -40,6 +36,9 @@ public class GraphStreamObserver implements Observer {
             " fill-color: green;" +
             " size: 5px;" +
             "}";
+    private final Graph graph;
+    private Element lastElement = null;
+    private Context lastContext = null;
 
     public GraphStreamObserver(Graph graph) {
         this.graph = graph;
@@ -78,8 +77,8 @@ public class GraphStreamObserver implements Observer {
                         machine.getCurrentContext() != lastContext) {
                     if (null == graph.getEdge(getId(lastContext, lastElement) + getId(machine.getCurrentContext(), vertex))) {
                         graph.addEdge(getId(lastContext, lastElement) + getId(machine.getCurrentContext(), vertex),
-                                (Node)graph.getNode(getId(lastContext, lastElement)),
-                                (Node)graph.getNode(getId(machine.getCurrentContext(), vertex)), true);
+                                (Node) graph.getNode(getId(lastContext, lastElement)),
+                                (Node) graph.getNode(getId(machine.getCurrentContext(), vertex)), true);
                     }
                 }
             } else {

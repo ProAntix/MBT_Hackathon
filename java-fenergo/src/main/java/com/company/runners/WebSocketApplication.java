@@ -1,6 +1,7 @@
 package com.company.runners;
 
-import com.company.modelimplementations.*;
+import com.company.modelimplementations.EnterEntityDetails;
+import com.company.modelimplementations.Fenergo;
 import org.graphwalker.java.test.Executor;
 import org.graphwalker.java.test.Result;
 import org.graphwalker.java.test.TestExecutor;

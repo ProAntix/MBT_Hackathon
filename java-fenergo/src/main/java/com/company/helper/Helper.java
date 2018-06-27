@@ -13,18 +13,16 @@ import java.util.Random;
  * Created by krikar on 2015-02-01.
  */
 public class Helper {
+    /**
+     * Timeout time in seconds used for waiting for element(s) to show up.
+     */
+    final static int timeOut = 10;
     private static final Logger log = LoggerFactory.getLogger(Helper.class);
-
     /**
      * Random number generator.
      * Will be used to create random data used for input in test.
      */
     static private Random random = new Random(System.currentTimeMillis());
-
-    /**
-     * Timeout time in seconds used for waiting for element(s) to show up.
-     */
-    final static int timeOut = 10;
 
     /**
      * Generates a random number with 1 to max digits.
@@ -44,13 +42,6 @@ public class Helper {
         getInstance().quit();
     }
 
-    /**
-     * Creates an instance of the Chrome WebDriver.
-     */
-    private static class WebDriverHolder {
-        private static final WebDriver INSTANCE = new ChromeDriver();
-    }
-
     public static WebDriverWait getWaiter() {
         return new WebDriverWait(getInstance(), 10);
     }
@@ -62,5 +53,12 @@ public class Helper {
      */
     public static WebDriver getInstance() {
         return WebDriverHolder.INSTANCE;
+    }
+
+    /**
+     * Creates an instance of the Chrome WebDriver.
+     */
+    private static class WebDriverHolder {
+        private static final WebDriver INSTANCE = new ChromeDriver();
     }
 }
