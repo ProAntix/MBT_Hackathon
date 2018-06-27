@@ -29,8 +29,6 @@ public class Fenergo extends ExecutionContext implements FenergoSharedState {
     @Override
     public void v_LandingPage() {
         Helper.getWaiter().until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='font-header2' and text()='My Tasks']")));
-        Helper.getWaiter().until(ExpectedConditions.elementToBeClickable(By.xpath("//i[@class='icon fen-icon-plus color']/ancestor::button"))).click();
-        Helper.getWaiter().until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@title='New Request']"))).click();
     }
 
 
@@ -92,7 +90,9 @@ public class Fenergo extends ExecutionContext implements FenergoSharedState {
 
     @Override
     public void e_NewRequest() {
-        Helper.getWaiter().until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[1]/div/div[2]/div/div/div/div/div/div/div/div/div/div/div[1]/header/div[1]/div/a")));    }
+        Helper.getWaiter().until(ExpectedConditions.elementToBeClickable(By.xpath("//i[@class='icon fen-icon-plus color']/ancestor::button"))).click();
+        Helper.getWaiter().until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@title='New Request']"))).click();
+    }
 
     @Override
     public void e_ClickLENameGPI() {
