@@ -1,6 +1,8 @@
 package com.company.runners;
 
 import com.company.modelimplementations.Fenergo;
+import com.company.modelimplementations.EntitySearch;
+import com.company.modelimplementations.EnterEntityDetails;
 import com.company.observers.GraphStreamObserver;
 import org.graphstream.graph.Graph;
 import org.graphstream.graph.implementations.SingleGraph;
@@ -21,7 +23,9 @@ public class GraphStreamApplication {
                 "org.graphstream.ui.j2dviewer.J2DGraphRenderer");
         Graph graph = new SingleGraph("GraphWalker MeetUp");
         graph.display(true);
-        Executor executor = new TestExecutor(Fenergo.class);
+        Executor executor = new TestExecutor(Fenergo.class,
+                EntitySearch.class,
+                EnterEntityDetails.class);
         Observer observer = new GraphStreamObserver(graph);
         executor.getMachine().addObserver(observer);
 
