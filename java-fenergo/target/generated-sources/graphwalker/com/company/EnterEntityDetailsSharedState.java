@@ -9,13 +9,16 @@ import org.graphwalker.java.annotation.Edge;
 public interface EnterEntityDetailsSharedState {
 
     @Vertex()
-    void v_CompleteRequest();
+    void v_LandingPage();
 
     @Edge()
     void e_CorrectData();
 
     @Edge()
     void e_IncorrectData();
+
+    @Edge()
+    void e_LandingPage();
 
     @Vertex()
     void v_EnterEntityDetailsPage();
@@ -29,12 +32,21 @@ public interface EnterEntityDetailsSharedState {
     @Edge()
     void e_ContinueNewRequest();
 
-    @Vertex()
-    void v_LandingPage();
-
-    @Edge()
-    void e_LandingPage();
-
     @Edge()
     void e_ClearData();
+
+    @Vertex()
+    void v_ContinueNewRequest();
+
+    @Edge()
+    void e_Client_CompleteRequest();
+
+    @Vertex()
+    void v_Client_CompleteRequest();
+
+    @Vertex()
+    void v_NonClient_CompleteRequest();
+
+    @Edge()
+    void e_NonClient_CompleteRequest();
 }

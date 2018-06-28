@@ -5,8 +5,8 @@ import org.graphwalker.java.annotation.Model;
 import org.graphwalker.java.annotation.Vertex;
 import org.graphwalker.java.annotation.Edge;
 
-@Model(file = "com/company/EnitySearch.graphml")
-public interface EnitySearch {
+@Model(file = "com/company/CaseSearchSharedState.graphml")
+public interface CaseSearchSharedState {
 
     @Vertex()
     void v_LandingPage();
@@ -15,5 +15,5 @@ public interface EnitySearch {
     void e_LandingPage();
 
     @Vertex()
-    void v_EntitySearchPage();
+    void v_CaseSearchPage();
 }

@@ -104,7 +104,7 @@ public class EnterEntityDetails extends ExecutionContext implements EnterEntityD
     }
 
     @Override
-    public void e_CompleteRequest() {
+    public void e_NonClient_CompleteRequest() {
         Helper.getWaiter().until(ExpectedConditions.presenceOfElementLocated(By.xpath("//label[@for='LEAssociation_AssociateTypeID']/following-sibling::div//input")))
                 .sendKeys("Broker");
         Helper.getWaiter().until(ExpectedConditions.presenceOfElementLocated(By.xpath("//label[@for='LEAssociation_AssociateTypeID']/following-sibling::div//input")))
@@ -123,8 +123,37 @@ public class EnterEntityDetails extends ExecutionContext implements EnterEntityD
     }
 
     @Override
-    public void v_CompleteRequest() {
+    public void v_NonClient_CompleteRequest() {
         Helper.getWaiter().until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='fen-panel-header ledetails']/h1[text()='LE Details']")));
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            // this part is executed when an exception (in this example InterruptedException) occurs
+        }
+    }
+
+    @Override
+    public void e_Client_CompleteRequest() {
+        Helper.getWaiter().until(ExpectedConditions.presenceOfElementLocated(By.xpath("//label[@for='LEAssociation_AssociateTypeID']/following-sibling::div//input")))
+                .sendKeys("Client/Counterparty");
+        Helper.getWaiter().until(ExpectedConditions.presenceOfElementLocated(By.xpath("//label[@for='LEAssociation_AssociateTypeID']/following-sibling::div//input")))
+                .sendKeys(Keys.RETURN);
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            // this part is executed when an exception (in this example InterruptedException) occurs
+        }
+        Helper.getWaiter().until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='Create entity']"))).click();
+        try {
+            Thread.sleep(4000);
+        } catch (InterruptedException e) {
+            // this part is executed when an exception (in this example InterruptedException) occurs
+        }
+    }
+
+    @Override
+    public void v_Client_CompleteRequest() {
+        Helper.getWaiter().until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='fen-panel-header capturerequestdetails']/h1[text()='Capture Request Details']")));
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {

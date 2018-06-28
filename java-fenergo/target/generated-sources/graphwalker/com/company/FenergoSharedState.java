@@ -17,6 +17,18 @@ public interface FenergoSharedState {
     @Vertex()
     void v_EnterEntityDetailsPage();
 
+    @Vertex()
+    void v_EntitySearchPage();
+
+    @Vertex()
+    void v_CaseSearchPage();
+
+    @Edge()
+    void e_CaseSearchPage();
+
     @Edge()
     void e_StartClient();
+
+    @Edge()
+    void e_EntitySearchPage();
 }

@@ -16,7 +16,7 @@ import java.io.IOException;
 public class WebSocketApplication {
 
     public static void main(String[] args) throws IOException {
-        Executor executor = new TestExecutor(Fenergo.class, EnterEntityDetails.class);
+        Executor executor = new TestExecutor(Fenergo.class);
 
         WebSocketServer server = new WebSocketServer(8887, executor.getMachine());
         server.start();

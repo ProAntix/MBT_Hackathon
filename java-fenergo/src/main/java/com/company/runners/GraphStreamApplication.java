@@ -23,9 +23,7 @@ public class GraphStreamApplication {
                 "org.graphstream.ui.j2dviewer.J2DGraphRenderer");
         Graph graph = new SingleGraph("GraphWalker MeetUp");
         graph.display(true);
-        Executor executor = new TestExecutor(Fenergo.class,
-                EntitySearch.class,
-                EnterEntityDetails.class);
+        Executor executor = new TestExecutor(Fenergo.class);
         Observer observer = new GraphStreamObserver(graph);
         executor.getMachine().addObserver(observer);
 
