@@ -8,9 +8,6 @@ import org.graphwalker.java.annotation.Edge;
 @Model(file = "com/company/EnterEntityDetailsSharedState.graphml")
 public interface EnterEntityDetailsSharedState {
 
-    @Vertex()
-    void v_CompleteRequest();
-
     @Edge()
     void e_CorrectData();
 
@@ -37,4 +34,19 @@ public interface EnterEntityDetailsSharedState {
 
     @Edge()
     void e_ClearData();
+
+    @Vertex()
+    void v_ContinueNewRequest();
+
+    @Edge()
+    void e_AddBroker_CompleteRequest();
+
+    @Edge()
+    void e_AddClient_CompleteRequest();
+
+    @Vertex()
+    void v_Client_CompleteRequest();
+
+    @Vertex()
+    void v_NonClient_CompleteRequest();
 }
