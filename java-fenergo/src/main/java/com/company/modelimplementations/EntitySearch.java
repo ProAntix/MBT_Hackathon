@@ -31,6 +31,41 @@ public class EntitySearch extends ExecutionContext implements EntitySearchShared
     }
 
     @Override
+    public void e_EnterLegalEntityName() {
+        Helper.getWaiter().until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@staticclientid='LegalEntityName']")))
+                .sendKeys("Graphwalker 1");
+        Helper.getWaiter().until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@id='ctl00_DefaultContent_ucSmartSearch_btnSearch']"))).click();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            // this part is executed when an exception (in this example InterruptedException) occurs
+        }
+    }
+
+    @Override
+    public void v_LEName_SearchResults() {
+        Helper.getWaiter().until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//tr[@id='ctl00_DefaultContent_ucSmartSearch_gvSearchResult_ctl00__0']//td[contains(text(),'GraphWalker 1')]")));
+    }
+
+
+    @Override
+    public void e_EnterLegalEntityId() {
+        Helper.getWaiter().until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@id='ctl00_DefaultContent_ucSmartSearch_11_EntityId_txtTextBox_text']")))
+                .sendKeys("223");
+        Helper.getWaiter().until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@id='ctl00_DefaultContent_ucSmartSearch_btnSearch']"))).click();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            // this part is executed when an exception (in this example InterruptedException) occurs
+        }
+    }
+
+    @Override
+    public void v_LEID_SearchResults() {
+        Helper.getWaiter().until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//tr[@id='ctl00_DefaultContent_ucSmartSearch_gvSearchResult_ctl00__0']//td[contains(text(),'GraphWalker 1')]")));
+    }
+
+    @Override
     public void e_LandingPage() {
         Helper.getWaiter().until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@class='icon-link' and @href='/app/landingPage']"))).click();
     }

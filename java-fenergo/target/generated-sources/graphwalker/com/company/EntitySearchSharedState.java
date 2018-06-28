@@ -16,4 +16,16 @@ public interface EntitySearchSharedState {
 
     @Vertex()
     void v_EntitySearchPage();
+
+    @Edge()
+    void e_EnterLegalEntityName();
+
+    @Vertex()
+    void v_LEName_SearchResults();
+
+    @Vertex()
+    void v_LEID_SearchResults();
+
+    @Edge()
+    void e_EnterLegalEntityId();
 }
